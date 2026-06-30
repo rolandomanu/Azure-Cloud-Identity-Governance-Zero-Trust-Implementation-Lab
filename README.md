@@ -36,3 +36,11 @@ By transitioning the tenant to an active defense posture via *Security Defaults*
 * **Effective Mitigation of Identity Risks via MFA:** The activation of native cloud security baselines proved to be an immediate, high-impact control for mitigating credential-compromise attacks. The tenant strictly enforces *Microsoft Authenticator* registration across all accounts, embedding a rigorous **Zero Trust** ("Never trust, always verify") posture.
 * **Strict Alignment with the Principle of Least Privilege (Least Privilege):** Through proper Separation of Duties (SoD), standard operational accounts remain strictly restricted to their specific job scopes without granting tenant-level administrative capabilities, directly reducing the exposed blast radius in the event of a credential leak.
 * **Reduction of Risk Exposure via Group Governance:** Consolidating users into structured, role-assigned groups ensures permissions are never provisioned loosely or individually, vastly simplifying compliance auditing, corporate governance, and the rapid revocation of access for temporary or external accounts.
+
+### 🛠️ Architecture Trade-offs & Baseline Selection
+Due to licensing constraints preventing custom Conditional Access rule creation (Points 4 & 5 from `temp_image_B9A630BA-76A1-4AB8-A909-14C9C19F89C2.jpg`), the environment was deliberately transitioned to **Microsoft Security Defaults**. 
+
+This deployment successfully accomplishes the following core security objectives:
+1. **Enforces Modern Authentication:** Mandates multi-factor authentication for both administrative and standard user tiers.
+2. **Hardens the Perimeter:** Automatically blocks all legacy authentication protocols (e.g., older email clients), removing common baseline exploit vectors.
+3. **Contractor Security:** Establishes a uniform security posture where external identities are tightly bound to the same strict MFA enrollment workflow.
